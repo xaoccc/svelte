@@ -1,3 +1,4 @@
+<!-- My first component -->
 <script lang="ts">
     let name: string = "Svelte";
 </script>
