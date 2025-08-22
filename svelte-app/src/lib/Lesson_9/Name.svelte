@@ -2,4 +2,4 @@
     let { name } = $props();
 </script>
 
-<p>My name is {name}</p>
+<p>My name is {name}.</p>
