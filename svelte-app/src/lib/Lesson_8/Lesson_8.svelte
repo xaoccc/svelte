@@ -1,0 +1,8 @@
+<!-- Universal reactivity -->
+<script lang="ts">
+    import Counter from './Counter.svelte';
+</script>
+
+<Counter />
+<Counter />
+<Counter />
