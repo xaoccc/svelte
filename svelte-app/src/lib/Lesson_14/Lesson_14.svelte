@@ -1,3 +1,4 @@
+<!-- Await blocks -->
 <script>
 	import { roll } from './utils.js';
 
