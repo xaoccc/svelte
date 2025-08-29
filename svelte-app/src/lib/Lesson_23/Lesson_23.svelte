@@ -1,11 +1,14 @@
-<!-- Classes -->
 <script>
 	let flipped = $state(false);
 </script>
 
 <div class="container">
 	Flip the card
-	<button class={["card", { flipped }]} onclick={() => (flipped = !flipped)}>
+	<button
+		class={["card", { flipped }]}
+		style="transform: {flipped ? 'rotateY(0)' : ''}; --bg-1: palegoldenrod; --bg-2: black; --bg-3: goldenrod"
+		onclick={() => flipped = !flipped}
+	>
 		<div class="front">
 			<span class="symbol">♠</span>
 		</div>
@@ -16,13 +19,6 @@
 </div>
 
 <style>
-	:root {
-		--bg-1: none;
-		--bg-2: #333;
-		--bg-3: #888;
-		--fg-1: #fff;
-		--fg-2: #333333;
-	}
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -52,8 +48,7 @@
 		transform: rotateY(0);
 	}
 
-	.front,
-	.back {
+	.front, .back {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -70,12 +65,8 @@
 	}
 
 	.front {
-		background:
-			url(./svelte-logo.svg) no-repeat 5em 5em,
-			url(./svelte-logo.svg) no-repeat calc(100% - 5em) calc(100% - 5em);
-		background-size:
-			8em 8em,
-			8em 8em;
+		background: url(../Lesson_22/svelte-logo.svg) no-repeat 5em 5em, url(../Lesson_22/svelte-logo.svg) no-repeat calc(100% - 5em) calc(100% - 5em);
+		background-size: 8em 8em, 8em 8em;
 	}
 
 	.back {
@@ -92,20 +83,10 @@
 		height: 100%;
 		background-color: var(--bg-2);
 		/* pattern from https://projects.verou.me/css3patterns/#marrakesh */
-		background-image: radial-gradient(var(--bg-3) 0.9em, transparent 1em),
-			repeating-radial-gradient(
-				var(--bg-3) 0,
-				var(--bg-3) 0.4em,
-				transparent 0.5em,
-				transparent 2em,
-				var(--bg-3) 2.1em,
-				var(--bg-3) 2.5em,
-				transparent 2.6em,
-				transparent 5em
-			);
-		background-size:
-			3em 3em,
-			9em 9em;
+		background-image:
+		radial-gradient(var(--bg-3) 0.9em, transparent 1em),
+		repeating-radial-gradient(var(--bg-3) 0, var(--bg-3) 0.4em, transparent 0.5em, transparent 2em, var(--bg-3) 2.1em, var(--bg-3) 2.5em, transparent 2.6em, transparent 5em);
+		background-size: 3em 3em, 9em 9em;
 		background-position: 0 0;
 		border-radius: 1em;
 	}
