@@ -2,6 +2,7 @@
   import svelteLogo from './assets/svelte.svg'
     import Lesson_29 from './lib/Lesson_29.svelte';
     import Lesson_30 from './lib/lesson_30.svelte';
+    import Lesson_33 from './lib/Lesson_33.svelte';
 
 </script>
 
@@ -15,7 +16,7 @@
   <h3>Each component will be a new lesson</h3>
 
   <div class="card">
-    <Lesson_30 />
+    <Lesson_33 />
   </div>
 
 </main>
