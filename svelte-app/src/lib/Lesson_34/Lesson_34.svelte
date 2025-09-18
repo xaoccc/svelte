@@ -1,7 +1,8 @@
+<!-- Raw state -->
 <script>
-	import { scale } from './utils.js';
-	import { poll } from './data.js';
-
+	import { scale } from "./utils.js";
+	import { poll } from "./data.js";
+	// In this example we do not need to update the state for the change of values in the data array
 	let data = $state.raw(poll());
 
 	let w = $state(1);
@@ -40,22 +41,26 @@
 		{#each ticks as tick}
 			<g class="tick" transform="translate(0,{y(tick)})">
 				<line x2={w} />
-				<text x={-5}>{tick}</text>
+				<text x={-5} fill="white" font-family="sans-serif">{tick}</text>
 			</g>
 		{/each}
 
-		<polyline points={data.map((d, i) => [x(i), y(d)]).join('')} />
+		<polyline points={data.map((d, i) => [x(i), y(d)]).join(" ")} />
 
-		<text x={10} y={10} font-size={36}>$SVLT</text>
+		<text x={40} y={40} font-size={36} fill="white" font-family="sans-serif">$SVLT</text>
 	</svg>
 </div>
 
 <style>
 	.outer {
-		width: 100%;
-		height: 100%;
-		padding: 2em;
+		width: calc(100vw - 4rem);
+		height: 20rem;
+		position: absolute;
+		left: 2rem;
+		bottom: 2rem;
 		box-sizing: border-box;
+		padding: 2rem 4rem;
+		
 	}
 
 	svg {
